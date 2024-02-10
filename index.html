@@ -62,7 +62,7 @@
 
                 console.log(palabra);
 
-
+                const colors = ['red', 'green', 'blue', 'purple', 'orange'];
                 this.contexto.clearRect(0, 0, this.anchoDelLienzo, this.altoDelLienzo);
                 for (let y = 0; y < palabra.length; y++) {
                     for (let x = 0; x < palabra[y].length; x++) {
@@ -70,7 +70,7 @@
                             this.contexto.beginPath();
                             const random = Math.random() * 20
                             this.contexto.arc(x * 40 + 20, y * 40 + 20, random < 10 ? 10 : random, 0, 2 * Math.PI, false);
-                            this.contexto.fillStyle = 'black';
+                            this.contexto.fillStyle = colors[Math.floor(Math.random() * colors.length)];
                             this.contexto.fill();
                         }
                     }
